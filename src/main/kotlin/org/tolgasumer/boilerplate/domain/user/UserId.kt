@@ -1,4 +1,4 @@
-package org.safa.sparkr.domain.user
+package org.tolgasumer.boilerplate.domain.user
 
 import jakarta.persistence.Column
 import java.io.Serializable

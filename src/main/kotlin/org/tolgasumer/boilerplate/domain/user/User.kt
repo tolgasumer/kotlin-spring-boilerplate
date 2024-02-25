@@ -1,10 +1,10 @@
-package org.safa.sparkr.domain.user
+package org.tolgasumer.boilerplate.domain.user
 
 import jakarta.persistence.Column
 import jakarta.persistence.EmbeddedId
 import jakarta.persistence.Entity
 import jakarta.persistence.Table
-import org.safa.sparkr.domain.BaseEntity
+import org.tolgasumer.boilerplate.domain.BaseEntity
 
 @Entity
 @Table(name = "user")

@@ -1,6 +1,6 @@
-import org.safa.sparkr.domain.user.User
-import org.safa.sparkr.domain.user.UserId
-import org.safa.sparkr.service.UserService
+import org.tolgasumer.boilerplate.domain.user.User
+import org.tolgasumer.boilerplate.domain.user.UserId
+import org.tolgasumer.boilerplate.service.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

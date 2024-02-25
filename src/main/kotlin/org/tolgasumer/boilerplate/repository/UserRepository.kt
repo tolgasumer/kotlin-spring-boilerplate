@@ -1,7 +1,7 @@
-package org.safa.sparkr.repository
+package org.tolgasumer.boilerplate.repository
 
-import org.safa.sparkr.domain.user.User
-import org.safa.sparkr.domain.user.UserId
+import org.tolgasumer.boilerplate.domain.user.User
+import org.tolgasumer.boilerplate.domain.user.UserId
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

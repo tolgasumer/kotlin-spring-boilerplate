@@ -1,4 +1,7 @@
-FROM ubuntu:latest
-LABEL authors="tolga"
+FROM openjdk:21
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY build/libs/*.jar app.jar
+
+CMD ["java", "-jar", "app.jar"]

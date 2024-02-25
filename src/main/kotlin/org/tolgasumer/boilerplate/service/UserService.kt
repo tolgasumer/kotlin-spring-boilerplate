@@ -1,8 +1,8 @@
-package org.safa.sparkr.service
+package org.tolgasumer.boilerplate.service
 
-import org.safa.sparkr.domain.user.User
-import org.safa.sparkr.domain.user.UserId
-import org.safa.sparkr.repository.UserRepository
+import org.tolgasumer.boilerplate.domain.user.User
+import org.tolgasumer.boilerplate.domain.user.UserId
+import org.tolgasumer.boilerplate.repository.UserRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

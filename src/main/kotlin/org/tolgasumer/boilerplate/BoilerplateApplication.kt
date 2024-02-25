@@ -1,11 +1,11 @@
-package org.safa.sparkr
+package org.tolgasumer.boilerplate
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SparkrApplication
+class boilerplateApplication
 
 fun main(args: Array<String>) {
-    runApplication<SparkrApplication>(*args)
+    runApplication<boilerplateApplication>(*args)
 }

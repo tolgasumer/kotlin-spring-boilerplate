@@ -1,4 +1,4 @@
-package org.safa.sparkr.domain
+package org.tolgasumer.boilerplate.domain
 
 import jakarta.persistence.MappedSuperclass
 import jakarta.persistence.Version
