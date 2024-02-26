@@ -7,10 +7,9 @@ import jakarta.persistence.Table
 import org.tolgasumer.boilerplate.domain.BaseEntity
 
 @Entity
-@Table(name = "user")
+@Table(name = "user1")
 class User : BaseEntity() {
     @EmbeddedId
-    @Column(name = "id")
     val id: UserId = UserId()
 
     @Column(name = "username")
