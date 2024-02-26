@@ -10,6 +10,7 @@ import org.tolgasumer.boilerplate.domain.BaseEntity
 @Table(name = "user")
 class User : BaseEntity() {
     @EmbeddedId
+    @Column(name = "id")
     val id: UserId = UserId()
 
     @Column(name = "username")
