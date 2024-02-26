@@ -7,7 +7,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
     id("org.hibernate.orm") version "6.4.4.Final"
     id("org.liquibase.gradle") version "2.2.0"
-    id("org.graalvm.buildtools.native") version "0.9.28"
     id("org.jetbrains.kotlin.jvm") version "1.9.22"
     id("org.jetbrains.kotlin.plugin.spring") version "1.9.22"
     id("org.jetbrains.kotlin.plugin.jpa") version "1.9.22"
@@ -25,18 +24,21 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.postgresql:postgresql")
     implementation("org.liquibase:liquibase-core")
+    // dev scope
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    // test scope
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:postgresql")
 }
 
 tasks.withType<KotlinCompile> {

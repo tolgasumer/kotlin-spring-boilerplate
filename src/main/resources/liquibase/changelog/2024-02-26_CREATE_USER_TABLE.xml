@@ -4,16 +4,17 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
-    <changeSet id="create_user_table" author="your_name">
+    <changeSet id="1" author="your_name">
+        <comment>create user table</comment>
         <sql>
-            CREATE TABLE IF NOT EXISTS user
+            CREATE TABLE IF NOT EXISTS "user"
             (
                 id       UUID NOT NULL PRIMARY KEY,
                 username TEXT NOT NULL
             );
         </sql>
         <rollback>
-            DROP TABLE IF EXISTS user;
+            DROP TABLE IF EXISTS "user";
         </rollback>
     </changeSet>
 
