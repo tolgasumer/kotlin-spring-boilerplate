@@ -1,10 +1,10 @@
 package org.tolgasumer.boilerplate.service
 
+import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import org.tolgasumer.boilerplate.domain.user.User
 import org.tolgasumer.boilerplate.domain.user.UserId
 import org.tolgasumer.boilerplate.repository.UserRepository
-import org.springframework.stereotype.Service
-import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserService(
@@ -30,7 +30,6 @@ class UserService(
     fun updateUser(id: UserId, user: User): User? {
         val existingUser = userRepository.findById(id)
         if (existingUser.isPresent) {
-            existingUser.get()
             val updatedUser = existingUser.get().update(
                 username = user.username,
             )

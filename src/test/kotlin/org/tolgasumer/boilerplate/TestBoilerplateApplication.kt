@@ -5,8 +5,8 @@ import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.boot.with
 
 @TestConfiguration(proxyBeanMethods = false)
-class TestboilerplateApplication
+class TestBoilerplateApplication
 
 fun main(args: Array<String>) {
-    fromApplication<boilerplateApplication>().with(TestboilerplateApplication::class).run(*args)
+    fromApplication<BoilerplateApplication>().with(TestBoilerplateApplication::class).run(*args)
 }
