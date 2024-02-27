@@ -7,13 +7,13 @@
     <changeSet id="1" author="your_name">
         <comment>create user table</comment>
         <sql>
-            CREATE TABLE IF NOT EXISTS "user1"
+            CREATE TABLE IF NOT EXISTS "user"
             (
-                id          UUID NOT NULL PRIMARY KEY,
-                username    TEXT NOT NULL,
-                created_at  TIMESTAMPTZ NOT NULL,
-                updated_at  TIMESTAMPTZ,
-                version     BIGINT NOT NULL
+                id              UUID NOT NULL PRIMARY KEY,
+                display_name    TEXT NOT NULL,
+                created_at      TIMESTAMPTZ NOT NULL,
+                updated_at      TIMESTAMPTZ,
+                version         BIGINT NOT NULL
             );
         </sql>
         <rollback>

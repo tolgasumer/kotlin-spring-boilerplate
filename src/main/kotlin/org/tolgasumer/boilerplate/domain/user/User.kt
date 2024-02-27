@@ -7,16 +7,16 @@ import jakarta.persistence.Table
 import org.tolgasumer.boilerplate.domain.BaseEntity
 
 @Entity
-@Table(name = "user1")
-class User : BaseEntity() {
+@Table(name = "`user`")
+data class User(
     @EmbeddedId
-    val id: UserId = UserId()
+    val id: UserId = UserId(),
 
-    @Column(name = "username")
-    var username = ""
-
-    fun update(username: String): User {
-        this.username = username
+    @Column(name = "display_name")
+    var displayName: String
+) : BaseEntity() {
+    fun update(displayName: String): User {
+        this.displayName = displayName
         return this
     }
 }

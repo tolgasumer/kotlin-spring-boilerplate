@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import org.tolgasumer.boilerplate.domain.user.UpdateUserRequest
 import org.tolgasumer.boilerplate.domain.user.User
 import org.tolgasumer.boilerplate.domain.user.UserId
 import org.tolgasumer.boilerplate.service.UserService
@@ -39,8 +40,8 @@ class UserController(
     }
 
     @PutMapping("/users/{id}")
-    fun updateUser(@PathVariable id: UserId, @RequestBody user: User): ResponseEntity<User> {
-        val updatedUser = userService.updateUser(id, user)
+    fun updateUser(@PathVariable id: UserId, @RequestBody updateUserRequest: UpdateUserRequest): ResponseEntity<User> {
+        val updatedUser = userService.updateUser(id, updateUserRequest)
         return ResponseEntity(updatedUser, HttpStatus.OK)
     }
 
