@@ -2,6 +2,6 @@
 
 - Java 21
 - Gradle (Kotlin DSL)
+- JPA + Hibernate + Liquibase
+- Testcontainers
 - Dockerized
-
-⚠️ No Liquibase or JPA auto-ddl generation
