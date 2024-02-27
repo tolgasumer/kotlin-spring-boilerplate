@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
@@ -17,6 +18,7 @@ class CustomPostgreSQLContainer(imageName: String) : PostgreSQLContainer<CustomP
 @Testcontainers
 @SpringBootTest
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 class BaseIntegrationTest {
     @Autowired
     protected lateinit var mockMvc: MockMvc
@@ -25,14 +27,14 @@ class BaseIntegrationTest {
         @Container
         @JvmStatic
         val postgres: CustomPostgreSQLContainer = CustomPostgreSQLContainer("postgres:latest")
-            .withUsername(System.getProperty("your_username"))
-            .withPassword(System.getProperty("your_password"))
 
         @BeforeAll
         @JvmStatic
         fun setUp() {
             postgres.start()
             System.setProperty("spring.datasource.url", postgres.jdbcUrl)
+            System.setProperty("spring.datasource.username", postgres.username)
+            System.setProperty("spring.datasource.password", postgres.password)
         }
 
         @AfterAll
